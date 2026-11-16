@@ -1,0 +1,13 @@
+{
+  "name": "Portal Loja Modelo",
+  "short_name": "Loja Modelo",
+  "description": "Portal interno da Loja Maçônica Loja Modelo",
+  "lang": "pt-BR",
+  "start_url": "/?pwa=1",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0e1110",
+  "theme_color": "#0e1110",
+  "id": "/"
+}

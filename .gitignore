@@ -1,0 +1,11 @@
+data/
+.env
+test-output/
+node_modules/
+*.log
+*.zip
+*.bak
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

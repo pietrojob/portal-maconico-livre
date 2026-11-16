@@ -1,0 +1,25 @@
+name: portal-maconico-livre
+services:
+  portal-maconico:
+    build: .
+    image: portal-maconico-livre:0.2.0
+    restart: unless-stopped
+    read_only: true
+    user: '10001:10001'
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    pids_limit: 64
+    environment:
+      PORTAL_HOSTS: ${PORTAL_HOSTS:?Defina os hostnames do portal em .env}
+      PORTAL_DATA: /data
+    volumes:
+      - ./data:/data
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=32m
+    networks:
+      portal-network:
+        aliases: [portal-maconico]
+networks:
+  portal-network:
+    driver: bridge

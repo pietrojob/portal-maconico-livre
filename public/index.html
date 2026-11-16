@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal interno da Loja Maçônica Loja Modelo" />
+  <title>Portal Loja Modelo</title>
+  <meta name="theme-color" content="#0e1110" />
+  <meta name="application-name" content="Loja Modelo" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Loja Modelo" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=32.2.10" />
+</head>
+<body>
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <section id="loginView" class="login-shell home-gateway three-access-home">
+    <div class="home-atmosphere" aria-hidden="true"></div>
+
+    <div class="login-panel premium-login-panel portal-access-panel">
+      <div class="portal-brand-home">
+        <div class="brand-mark" aria-hidden="true">LM</div>
+        <div class="gold-rule" aria-hidden="true"><span></span></div>
+        <p class="home-kicker">Primeiro acesso</p>
+        <h2>Portal Loja Modelo</h2>
+        <p class="portal-restricted">Acesso restrito aos irmãos</p>
+      </div>
+
+      <form id="loginForm" class="login-form premium-login-form">
+        <label>
+          <span>Matrícula</span>
+          <span class="premium-input-wrap">
+            <span class="input-symbol" aria-hidden="true">♙</span>
+            <input id="matricula" autocomplete="username" placeholder="Digite seu usuário" required />
+          </span>
+        </label>
+        <label>
+          <span>Senha</span>
+          <span class="premium-input-wrap">
+            <span class="input-symbol" aria-hidden="true">◆</span>
+            <input id="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required />
+          </span>
+        </label>
+        <button class="premium-login-btn" type="submit"><span>Entrar no Portal</span><span aria-hidden="true">›</span></button>
+      </form>
+
+      <p class="demo-note premium-security-note">Demonstração: usuário <strong>admin</strong> e senha <strong>admin</strong>. Troque a senha antes de publicar.</p>
+      <div class="portal-motto" aria-hidden="true">
+        <span>Liberdade</span><i>·</i><span>Igualdade</span><i>·</i><span>Fraternidade</span>
+      </div>
+      <p class="portal-family">“Mais que uma Loja, uma Família”</p>
+    </div>
+
+    <div class="home-divider" aria-hidden="true"><span></span></div>
+
+    <aside class="login-visual" aria-label="Portal Maçônico Livre">
+      <div class="portal-maconico-word" aria-hidden="true">OPEN</div>
+      <p>Uma base aberta e personalizável para a gestão de lojas maçônicas.</p>
+    </aside>
+  </section>
+
+  <div id="appView" class="app hidden">
+    <div class="app-version" aria-label="Versão do portal">v32.2.10</div>
+    <aside class="sidebar" id="portalSidebar" aria-label="Menu principal">
+      <div class="sidebar-brand">
+        <div class="brand-mark small" aria-hidden="true">LM</div>
+        <div><strong>Loja Modelo</strong><span>Portal interno</span></div>
+      </div>
+      <nav id="navMenu" class="nav-menu">
+        <button data-view="dashboard" class="active"><span>⌂</span> Início</button>
+        <button data-view="social"><span>◇</span> Área Social</button>
+        <button data-view="finance"><span>₿</span> Financeiro</button>
+        <button data-view="library"><span>▤</span> Biblioteca</button>
+        <button data-view="members"><span>♙</span> Irmãos</button>
+        <button data-view="attendance"><span>✓</span> Chancelaria</button>
+        <button data-view="management" data-admin-only><span>☑</span> Gestão</button>
+        <button data-view="managements"><span>◈</span> Gestões</button>
+        <button data-view="admin" data-admin-only><span>⚙</span> Administração</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="degree-badge" id="degreeBadge">Mestre</div>
+        <button id="changePasswordBtn" class="btn ghost" type="button">Alterar senha</button>
+        <button id="logoutBtn" class="btn ghost" type="button">Sair</button>
+      </div>
+    </aside>
+    <button id="mobileNavBackdrop" class="mobile-nav-backdrop hidden" type="button" aria-label="Fechar menu"></button>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Abrir menu" aria-controls="portalSidebar" aria-expanded="false"><span aria-hidden="true">☰</span></button>
+          <div>
+            <p class="eyebrow" id="pageEyebrow">Visão geral</p>
+            <h2 id="pageTitle">Painel</h2>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button id="installAppBtn" class="install-app-btn hidden" type="button" aria-label="Instalar Portal Loja Modelo" title="Instalar aplicativo">
+            <span class="install-app-icon" aria-hidden="true">⇩</span>
+            <span class="install-app-label">Instalar</span>
+          </button>
+          <button id="themeToggleBtn" class="theme-toggle" type="button" aria-label="Ativar tema claro" title="Tema claro">
+            <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+            <span class="theme-toggle-label">Tema claro</span>
+          </button>
+          <div class="user-chip">
+            <div class="avatar">PJ</div>
+            <div><strong id="currentUserName">Pietro Job</strong><span id="currentUserMeta">Mestre</span></div>
+          </div>
+        </div>
+      </header>
+
+      <section id="view-dashboard" class="view active-view">
+        <div class="section-intro home-social-heading">
+          <div>
+            <p class="eyebrow">Vida da Loja</p>
+            <h3>Início</h3>
+            <p>Próxima sessão, agenda e somente os comunicados selecionados como destaque pela administração.</p>
+          </div>
+        </div>
+
+
+        <div class="stats-grid compact home-stats home-stats-minimal">
+          <article class="stat-card"><span>Mensalidade</span><strong id="statFinance">Em dia</strong><small id="statFinanceDetail">situação atual</small></article>
+          <article class="stat-card"><span>Biblioteca</span><strong id="statLibrary">0</strong><small>documentos acessíveis</small></article>
+        </div>
+
+        <article id="nextSessionCard" class="card social-next-event hidden"></article>
+
+        <article class="card agenda-card">
+          <div class="card-head">
+            <div><p class="eyebrow">Agenda</p><h3>Agenda da Loja</h3></div>
+            <span id="agendaCount" class="access-level">0 compromissos futuros</span>
+          </div>
+          <div id="agendaList" class="agenda-list"></div>
+        </article>
+
+        <article class="card social-card home-social-card home-highlights-card">
+          <div class="card-head social-feed-head">
+            <div><p class="eyebrow">Destaques</p><h3>Em evidência</h3></div>
+            <small>Somente conteúdos selecionados como destaque</small>
+          </div>
+          <div id="socialHighlightsEmpty" class="agenda-empty hidden"><strong>Nenhum destaque selecionado.</strong><span>Ao marcar uma publicação como destaque, ela aparecerá aqui.</span></div>
+          <div id="socialGrid" class="social-grid social-dynamic-grid"></div>
+        </article>
+      </section>
+
+      <section id="view-social" class="view">
+        <div class="section-intro social-page-heading">
+          <div>
+            <p class="eyebrow">Vida da Loja</p>
+            <h3>Área Social</h3>
+            <p>Notícias, sessões, eventos, galerias e registros da Loja Modelo. A página inicial continua mostrando somente os conteúdos marcados como destaque.</p>
+          </div>
+          <div class="home-social-actions">
+            <button id="newPostBtn" class="btn primary hidden">+ Nova publicação</button>
+            <button id="newSessionBtn" class="btn ghost hidden">+ Cadastrar sessão</button>
+          </div>
+        </div>
+
+        <article class="card social-card social-archive-card">
+          <div class="card-head social-feed-head">
+            <div><p class="eyebrow">Publicações</p><h3>Arquivo social da Loja</h3></div>
+            <span id="socialArchiveCount" class="access-level">0 registros</span>
+          </div>
+          <div class="toolbar social-toolbar">
+            <input id="socialSearch" placeholder="Buscar notícia, sessão, evento ou palavra-chave..." />
+            <select id="socialTypeFilter" aria-label="Filtrar tipo de publicação">
+              <option value="todos">Todos os tipos</option>
+              <option value="informacao">Informações</option>
+              <option value="sessao">Sessões</option>
+              <option value="evento">Eventos</option>
+              <option value="galeria">Galerias</option>
+            </select>
+          </div>
+          <div id="socialArchiveEmpty" class="agenda-empty hidden"><strong>Nenhum registro encontrado.</strong><span>Altere a busca ou cadastre uma nova publicação.</span></div>
+          <div id="socialAllGrid" class="social-grid social-dynamic-grid"></div>
+        </article>
+      </section>
+
+      <section id="view-finance" class="view">
+        <div class="section-intro finance-heading">
+          <div><p class="eyebrow">Tesouraria</p><h3>Controle financeiro</h3><p id="financeIntro">Consulte seu histórico e situação financeira.</p></div>
+          <div id="financeActions" class="button-row hidden">
+            <button id="exportFinanceBtn" class="btn ghost">Exportar mensalidades</button>
+            <button id="bulkChargeBtn" class="btn ghost">Gerar competência</button>
+            <button id="newChargeBtn" class="btn primary">+ Lançamento individual</button>
+          </div>
+        </div>
+
+        <div id="financeSubtabs" class="finance-subtabs">
+          <button class="finance-subtab active" type="button" data-finance-tab="charges">Mensalidades</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="revenues">Receitas</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="expenses">Despesas</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="events">Eventos</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="payables">Contas a pagar</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="receivables">Contas a receber</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="accounts">Plano de contas</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="cost-centers">Centros de custo</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="budget">Orçamento anual</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="bank">Extrato bancário</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="cashflow">Fluxo de caixa</button>
+          <button class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="reports">Relatórios</button>
+          <button id="financeConfigTabBtn" class="finance-subtab finance-admin-tab hidden" type="button" data-finance-tab="config">Configurações</button>
+        </div>
+
+        <div id="financeChargesPanel" class="finance-tab-panel">
+          <div id="treasurerSummary" class="stats-grid compact hidden">
+            <article class="stat-card"><span>Recebido</span><strong id="receivedTotal">R$ 0,00</strong><small id="receivedDetail">competência selecionada</small></article>
+            <article class="stat-card"><span>A receber</span><strong id="openTotal">R$ 0,00</strong><small id="openDetail">em aberto + vencidas</small></article>
+            <article class="stat-card"><span>Irmãos em dia</span><strong id="paidMembers">0</strong><small>sem pendências</small></article>
+            <article class="stat-card"><span>Com pendência</span><strong id="pendingMembers">0</strong><small>ao menos uma mensalidade</small></article>
+          </div>
+          <div id="duesCompositionSummary" class="stats-grid compact hidden">
+            <article class="stat-card"><span>Mensalidade mensal</span><strong id="duesMonthlyGrossDisplay">R$ 0,00</strong><small>valor total pago pelo irmão</small></article>
+            <article class="stat-card"><span>GLMERGS · custo mensal</span><strong id="duesMonthlyGlmergsDisplay">R$ 0,00</strong><small id="duesMonthlyGlmergsDetail">Capitação + DAM do mês</small></article>
+            <article class="stat-card"><span>Líquido econômico da Loja</span><strong id="duesMonthlyNetDisplay">R$ 0,00</strong><small>mensalidade − rateio GLMERGS</small></article>
+            <article class="stat-card"><span>Projeção anual GLMERGS por irmão</span><strong id="duesAnnualGlmergsDisplay">R$ 0,00</strong><small>devido mesmo com inadimplência</small></article>
+          </div>
+          <article class="card finance-card">
+            <div class="toolbar finance-toolbar">
+              <input id="financeSearch" placeholder="Buscar por irmão ou competência..." />
+              <select id="financeYearTabs" class="finance-year-select hidden" aria-label="Ano das mensalidades"></select>
+              <select id="financeMonthFilter"><option value="todos">Todas as competências</option></select>
+              <select id="financeStatusFilter"><option value="todos">Todos os status</option><option value="pago">Pago</option><option value="aberto">Em aberto</option><option value="atrasado">Vencido</option><option value="isento">Isento</option></select>
+            </div>
+            <div id="financeMonthTabs" class="finance-month-tabs hidden" aria-label="Meses do exercício"></div>
+            <div class="finance-context" id="financeContext"></div>
+            <div class="table-wrap">
+              <table class="finance-table"><thead><tr><th>Irmão</th><th>Competência</th><th>Valor total</th><th>Vencimento</th><th>Pagamento</th><th>Status</th><th data-treasurer-only>Ações</th></tr></thead><tbody id="financeRows"></tbody></table>
+            </div>
+          </article>
+          <article id="auditCard" class="card audit-card hidden">
+            <div class="card-head"><div><p class="eyebrow">Rastreabilidade</p><h3>Últimas movimentações</h3></div><small>trilha de auditoria financeira</small></div>
+            <div id="auditRows" class="stack-list"></div>
+          </article>
+        </div>
+
+        <div id="financeRevenuesPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Receitas no ano</span><strong id="revenueYearTotal">R$ 0,00</strong><small id="revenueYearDetail">exercício</small></article>
+            <article class="stat-card"><span>Receitas no mês</span><strong id="revenueMonthTotal">R$ 0,00</strong><small>mês atual</small></article>
+            <article class="stat-card"><span>Lançamentos</span><strong id="revenueCount">0</strong><small>receitas cadastradas</small></article>
+            <article class="stat-card"><span>A conciliar</span><strong id="revenuePending">0</strong><small>sem vínculo bancário</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Entradas</p><h3>Receitas</h3></div><button id="newRevenueBtn" class="btn primary" type="button">+ Nova receita</button></div>
+            <div class="toolbar ledger-toolbar"><input id="revenueSearch" placeholder="Buscar descrição, categoria ou origem..."/><select id="revenueYearFilter"></select></div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Data</th><th>Conta contábil</th><th>Centro de custo</th><th>Descrição</th><th>Origem</th><th>Valor</th><th>Forma</th><th>Status</th><th>Ações</th></tr></thead><tbody id="revenueRows"></tbody></table></div>
+          </article>
+        </div>
+
+        <div id="financeExpensesPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Despesas no ano</span><strong id="expenseYearTotal">R$ 0,00</strong><small id="expenseYearDetail">exercício</small></article>
+            <article class="stat-card"><span>Despesas no mês</span><strong id="expenseMonthTotal">R$ 0,00</strong><small>mês atual</small></article>
+            <article class="stat-card"><span>Lançamentos</span><strong id="expenseCount">0</strong><small>despesas cadastradas</small></article>
+            <article class="stat-card"><span>A conciliar</span><strong id="expensePending">0</strong><small>sem vínculo bancário</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Saídas</p><h3>Despesas e custos</h3></div><button id="newExpenseBtn" class="btn primary" type="button">+ Nova despesa</button></div>
+            <div class="toolbar ledger-toolbar"><input id="expenseSearch" placeholder="Buscar descrição, categoria ou fornecedor..."/><select id="expenseYearFilter"></select></div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Data</th><th>Conta contábil</th><th>Centro de custo</th><th>Descrição</th><th>Fornecedor</th><th>Valor</th><th>Forma</th><th>Status</th><th>Ações</th></tr></thead><tbody id="expenseRows"></tbody></table></div>
+          </article>
+        </div>
+
+
+
+        <div id="financeEventsPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Receitas de eventos</span><strong id="eventRevenueTotal">R$ 0,00</strong><small>ingressos e pagamentos registrados</small></article>
+            <article class="stat-card"><span>Custos dos eventos</span><strong id="eventExpenseTotal">R$ 0,00</strong><small>despesas extraordinárias vinculadas</small></article>
+            <article class="stat-card"><span>Resultado dos eventos</span><strong id="eventResultTotal">R$ 0,00</strong><small>receitas − despesas</small></article>
+            <article class="stat-card"><span>Ingressos registrados</span><strong id="eventTicketTotal">0</strong><small>calculados pelo valor pago</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Receitas extraordinárias</p><h3>Eventos</h3><p class="form-help">Cada evento possui um valor unitário de ingresso. Pagamentos em múltiplos desse valor geram automaticamente a quantidade de ingressos.</p></div><button id="newFinancialEventBtn" class="btn primary" type="button">+ Novo evento</button></div>
+            <div class="toolbar ledger-toolbar"><input id="eventSearch" placeholder="Buscar evento..."/><select id="eventYearFilter"></select></div>
+            <div id="financialEventRows" class="event-finance-grid"></div>
+          </article>
+        </div>
+
+        <div id="financePayablesPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>A pagar</span><strong id="payableOpenTotal">R$ 0,00</strong><small>obrigações em aberto</small></article>
+            <article class="stat-card"><span>Vencidas</span><strong id="payableOverdueTotal">R$ 0,00</strong><small id="payableOverdueCount">0 conta(s)</small></article>
+            <article class="stat-card"><span>Pago no ano</span><strong id="payableSettledTotal">R$ 0,00</strong><small>baixas registradas</small></article>
+            <article class="stat-card"><span>Próximos 30 dias</span><strong id="payableNext30Total">R$ 0,00</strong><small>necessidade prevista de caixa</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Obrigações</p><h3>Contas a pagar</h3><p class="form-help">Registre a obrigação quando ela nasce. O pagamento gera automaticamente a despesa realizada no caixa.</p></div><button id="newPayableBtn" class="btn primary" type="button">+ Conta a pagar</button></div>
+            <div class="toolbar ledger-toolbar"><input id="payableSearch" placeholder="Buscar descrição, fornecedor, conta ou centro..."/><select id="payableYearFilter"></select><select id="payableStatusFilter"><option value="todos">Todos os status</option><option value="aberto">A vencer</option><option value="provisionado">Provisionadas</option><option value="vencido">Vencidas</option><option value="liquidado">Pagas</option><option value="cancelado">Canceladas</option></select></div>
+            <div class="finance-context">A <strong>competência</strong> indica quando a despesa pertence economicamente; o <strong>vencimento</strong> indica quando ela deve ser paga.</div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Competência</th><th>Vencimento</th><th>Conta contábil</th><th>Centro de custo</th><th>Descrição</th><th>Fornecedor</th><th>Valor</th><th>Status</th><th>Baixa</th><th>Ações</th></tr></thead><tbody id="payableRows"></tbody></table></div>
+          </article>
+        </div>
+
+        <div id="financeReceivablesPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>A receber</span><strong id="receivableOpenTotal">R$ 0,00</strong><small>direitos em aberto</small></article>
+            <article class="stat-card"><span>Vencidas</span><strong id="receivableOverdueTotal">R$ 0,00</strong><small id="receivableOverdueCount">0 conta(s)</small></article>
+            <article class="stat-card"><span>Recebido no ano</span><strong id="receivableSettledTotal">R$ 0,00</strong><small>baixas registradas</small></article>
+            <article class="stat-card"><span>Próximos 30 dias</span><strong id="receivableNext30Total">R$ 0,00</strong><small>entrada prevista de caixa</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Direitos</p><h3>Contas a receber</h3><p class="form-help">Use para receitas previstas além das mensalidades ordinárias. O recebimento gera automaticamente a receita realizada.</p></div><button id="newReceivableBtn" class="btn primary" type="button">+ Conta a receber</button></div>
+            <div class="toolbar ledger-toolbar"><input id="receivableSearch" placeholder="Buscar descrição, pagador, conta ou centro..."/><select id="receivableYearFilter"></select><select id="receivableStatusFilter"><option value="todos">Todos os status</option><option value="aberto">A vencer</option><option value="vencido">Vencidas</option><option value="liquidado">Recebidas</option><option value="cancelado">Canceladas</option></select></div>
+            <div class="finance-context">Mensalidades continuam em sua aba própria. Aqui ficam outros valores previstos a receber: eventos, doações prometidas, contribuições extraordinárias e similares.</div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Competência</th><th>Vencimento</th><th>Conta contábil</th><th>Centro de custo</th><th>Descrição</th><th>Pagador</th><th>Valor</th><th>Status</th><th>Baixa</th><th>Ações</th></tr></thead><tbody id="receivableRows"></tbody></table></div>
+          </article>
+        </div>
+
+
+        <div id="financeAccountsPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Contas ativas</span><strong id="chartAccountActiveCount">0</strong><small>plano de contas vigente</small></article>
+            <article class="stat-card"><span>Contas de receita</span><strong id="chartAccountRevenueCount">0</strong><small>classificação das entradas</small></article>
+            <article class="stat-card"><span>Contas de despesa</span><strong id="chartAccountExpenseCount">0</strong><small>classificação das saídas</small></article>
+            <article class="stat-card"><span>A classificar</span><strong id="chartAccountUnclassifiedCount">0</strong><small>lançamentos antigos sem conta</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head">
+              <div><p class="eyebrow">Classificação financeira</p><h3>Plano de contas</h3><p class="form-help">Padroniza a classificação de receitas e despesas. Contas já utilizadas são preservadas no histórico; em vez de excluí-las, desative-as.</p></div>
+              <button id="newChartAccountBtn" class="btn primary hidden" type="button">+ Nova conta</button>
+            </div>
+            <div class="toolbar ledger-toolbar chart-account-toolbar">
+              <input id="chartAccountSearch" placeholder="Buscar código, conta ou grupo..." />
+              <select id="chartAccountTypeFilter"><option value="todos">Receitas e despesas</option><option value="receita">Somente receitas</option><option value="despesa">Somente despesas</option></select>
+              <select id="chartAccountStatusFilter"><option value="ativos">Somente ativas</option><option value="todos">Ativas e inativas</option><option value="inativos">Somente inativas</option></select>
+            </div>
+            <div class="finance-context">A conta <strong>1.01 · Mensalidades ordinárias</strong> é estrutural e permanece ativa para integrar mensalidades aos relatórios contábeis nas próximas etapas.</div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Código</th><th>Conta</th><th>Natureza</th><th>Grupo</th><th>Status</th><th>Uso</th><th>Ações</th></tr></thead><tbody id="chartAccountRows"></tbody></table></div>
+          </article>
+        </div>
+
+        <div id="financeCostCentersPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Centros ativos</span><strong id="costCenterActiveCount">0</strong><small>disponíveis para lançamentos</small></article>
+            <article class="stat-card"><span>Centros utilizados</span><strong id="costCenterUsedCount">0</strong><small>com movimentação registrada</small></article>
+            <article class="stat-card"><span>Não alocados</span><strong id="costCenterUnallocatedCount">0</strong><small>lançamentos em Geral / não alocado</small></article>
+            <article class="stat-card"><span>Projetos específicos</span><strong id="costCenterProjectCount">0</strong><small>subcentros em CC.10</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head">
+              <div><p class="eyebrow">Finalidade dos recursos</p><h3>Centros de custo</h3><p class="form-help">O Plano de Contas informa o que foi recebido ou gasto; o Centro de Custo identifica onde ou para qual finalidade o recurso foi utilizado.</p></div>
+              <button id="newCostCenterBtn" class="btn primary hidden" type="button">+ Novo centro</button>
+            </div>
+            <div class="toolbar ledger-toolbar">
+              <input id="costCenterSearch" placeholder="Buscar código, centro ou descrição..." />
+              <select id="costCenterStatusFilter"><option value="ativos">Somente ativos</option><option value="todos">Ativos e inativos</option><option value="inativos">Somente inativos</option></select>
+            </div>
+            <div class="finance-context">O centro <strong>CC.99 · Geral / não alocado</strong> é estrutural. Lançamentos antigos são direcionados a ele até que sejam reclassificados.</div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Código</th><th>Centro de custo</th><th>Status</th><th>Uso</th><th>Ações</th></tr></thead><tbody id="costCenterRows"></tbody></table></div>
+          </article>
+        </div>
+
+
+        <div id="financeBudgetPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Receitas orçadas</span><strong id="budgetRevenueTotal">R$ 0,00</strong><small>previsão anual</small></article>
+            <article class="stat-card"><span>Despesas orçadas</span><strong id="budgetExpenseTotal">R$ 0,00</strong><small>previsão anual</small></article>
+            <article class="stat-card"><span>Resultado orçado</span><strong id="budgetNetTotal">R$ 0,00</strong><small>receitas menos despesas</small></article>
+            <article class="stat-card"><span>Resultado realizado</span><strong id="budgetRealizedNet">R$ 0,00</strong><small>movimentação efetiva</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Planejamento</p><h3>Orçamento anual</h3><p class="form-help">Compare automaticamente o que foi planejado com o que efetivamente entrou ou saiu.</p></div><button id="newBudgetBtn" class="btn primary" type="button">+ Previsão orçamentária</button></div>
+            <div class="toolbar ledger-toolbar"><select id="budgetYear"></select></div>
+            <div class="finance-context">Mensalidades, Capitação e DAM são configuradas por mês. Ao gerar cada competência mensal, o sistema cria automaticamente os custos de Capitação e DAM para todos os irmãos ativos.</div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Conta</th><th>Centro de custo</th><th>Natureza</th><th>Orçado</th><th>Realizado</th><th>Diferença<br><small>realizado − orçado</small></th><th>% realizado</th><th>Origem</th><th>Ações</th></tr></thead><tbody id="budgetRows"></tbody></table></div>
+          </article>
+        </div>
+
+        <div id="financeBankPanel" class="finance-tab-panel hidden">
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Créditos importados</span><strong id="bankCreditTotal">R$ 0,00</strong><small>filtro selecionado</small></article>
+            <article class="stat-card"><span>Débitos importados</span><strong id="bankDebitTotal">R$ 0,00</strong><small>filtro selecionado</small></article>
+            <article class="stat-card"><span>Pendentes</span><strong id="bankPendingCount">0</strong><small>aguardando conciliação</small></article>
+            <article class="stat-card"><span>Conciliados</span><strong id="bankReconciledCount">0</strong><small>vinculados ao sistema</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head bank-head"><div><p class="eyebrow">Conciliação</p><h3>Extrato bancário</h3><p class="form-help">O motor local sugere correspondências. Confira cada sugestão antes de aplicar. Nenhum dado é enviado a serviços de IA.</p></div><div class="bank-head-actions"><button id="autoReconcileBtn" class="btn ghost" type="button">⚡ Analisar automaticamente</button><label class="btn primary file-button">Importar extrato<input id="bankStatementFile" type="file" accept=".csv,.ofx,.qfx,.xlsx,.xls,text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden /></label></div></div>
+            <div class="toolbar bank-toolbar"><input id="bankSearch" placeholder="Buscar no extrato..."/><select id="bankYearFilter"></select><select id="bankStatusFilter"><option value="todos">Todos</option><option value="pending">Pendentes</option><option value="reconciled">Conciliados</option><option value="ignored">Ignorados</option></select></div>
+            <div id="bankImportInfo" class="finance-context">Nenhum extrato selecionado nesta sessão.</div>
+            <div id="aiReconcileInfo" class="finance-context ai-context">Análise local das movimentações pendentes. Confirme as sugestões antes de aplicá-las.</div>
+            <div class="table-wrap"><table class="finance-table bank-table"><thead><tr><th>Data</th><th>Histórico</th><th>Movimento</th><th>Sugestão</th><th>Status</th><th>Ações</th></tr></thead><tbody id="bankRows"></tbody></table></div>
+          </article>
+        </div>
+
+        <div id="financeCashflowPanel" class="finance-tab-panel hidden">
+          <div class="toolbar cashflow-toolbar"><select id="cashflowYear"></select></div>
+          <div class="stats-grid compact">
+            <article class="stat-card"><span>Entradas</span><strong id="cashflowIncome">R$ 0,00</strong><small>mensalidades + outras receitas</small></article>
+            <article class="stat-card"><span>Despesas</span><strong id="cashflowExpenses">R$ 0,00</strong><small>custos lançados</small></article>
+            <article class="stat-card"><span>Resultado</span><strong id="cashflowNet">R$ 0,00</strong><small>entradas − despesas</small></article>
+            <article class="stat-card"><span>Saldo projetado</span><strong id="cashflowBalance">R$ 0,00</strong><small>saldo inicial + resultado</small></article>
+          </div>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Fluxo de caixa</p><h3>Resumo mensal</h3></div><small id="cashflowAccountLabel"></small></div>
+            <div class="table-wrap"><table class="finance-table cashflow-table"><thead><tr><th>Mês</th><th>Mensalidades</th><th>Outras receitas</th><th>Despesas</th><th>Resultado</th><th>Acumulado</th></tr></thead><tbody id="cashflowRows"></tbody></table></div>
+          </article>
+        </div>
+
+        <div id="financeReportsPanel" class="finance-tab-panel hidden">
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Prestação de contas</p><h3>Relatórios financeiros</h3></div><select id="reportYear"></select></div>
+            <div class="report-actions">
+              <button id="exportConsolidatedBtn" class="btn primary" type="button">Exportar consolidado CSV</button>
+              <button id="exportPendingBtn" class="btn ghost" type="button">Exportar inadimplência</button>
+              <button id="exportBankBtn" class="btn ghost" type="button">Exportar conciliação bancária</button>
+            </div>
+            <div id="reportSummary" class="report-summary"></div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Indicador</th><th>Valor</th><th>Observação</th></tr></thead><tbody id="reportRows"></tbody></table></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Análise gerencial</p><h3>Resultado por centro de custo</h3></div><small>receitas − despesas por finalidade</small></div>
+            <div class="finance-context">Mensalidades são apresentadas em <strong>CC.99 · Geral / não alocado</strong> até que uma política específica de alocação seja definida.</div>
+            <div class="table-wrap"><table class="finance-table"><thead><tr><th>Centro de custo</th><th>Receitas</th><th>Despesas</th><th>Resultado</th></tr></thead><tbody id="reportCostCenterRows"></tbody></table></div>
+          </article>
+        </div>
+
+        <div id="financeConfigPanel" class="finance-tab-panel hidden">
+          <div class="config-notice">
+            <div><p class="eyebrow">Configuração financeira</p><h3>Parâmetros da Tesouraria</h3></div>
+            <p>Somente Venerável Mestre, Tesoureiro e Administrador podem alterar os parâmetros. O Secretário pode consultar, sem editar.</p>
+          </div>
+          <div id="duesConfigStats" class="stats-grid compact">
+            <article class="stat-card"><span>Irmãos ativos</span><strong id="duesActiveMembers">0</strong><small>incluídos na configuração</small></article>
+            <article class="stat-card"><span>Mensalidades previstas</span><strong id="duesExpectedCharges">0</strong><small>12 × irmãos não isentos</small></article>
+            <article class="stat-card"><span>Competências geradas</span><strong id="duesRegisteredCharges">0</strong><small id="duesRegisteredDetail">geração mês a mês</small></article>
+            <article class="stat-card"><span>Total anual previsto</span><strong id="duesExpectedTotal">R$ 0,00</strong><small id="duesExemptCount">descontadas as isenções</small></article>
+          </div>
+          <div class="two-col dues-config-layout">
+            <article class="card">
+              <div class="card-head"><div><p class="eyebrow">Mensalidades</p><h3>Valor-base do ano</h3></div><span id="duesConfigPermission" class="access-level"></span></div>
+              <form id="duesConfigForm" class="modal-form dues-config-form">
+                <div class="form-grid"><label>Ano<input id="duesConfigYear" type="number" min="2020" max="2100" step="1" value="2026" required /></label><label>Valor-base mensal (R$)<input id="duesBaseValue" type="number" min="0.01" step="0.01" value="180" required /></label></div>
+                <div class="form-grid"><label>Capitação mensal por irmão (R$)<input id="duesCapitationValue" type="number" min="0" step="0.01" value="0" required /></label><label>DAM mensal por irmão (R$)<input id="duesDamValue" type="number" min="0" step="0.01" value="0" required /></label></div><p class="form-help">DAM e Capitação são valores mensais por irmão ativo. Na primeira configuração após esta atualização, informe novamente os valores mensais.</p>
+                <div class="stats-grid compact dues-breakdown-grid">
+                  <article class="stat-card"><span>Mensalidade cobrada</span><strong id="duesConfigGrossMonthly">R$ 0,00</strong><small>entrada mensal no banco quando paga</small></article>
+                  <article class="stat-card"><span>Rateio GLMERGS / mês</span><strong id="duesConfigGlmergsMonthly">R$ 0,00</strong><small>Capitação mensal + DAM mensal</small></article>
+                  <article class="stat-card"><span>Líquido econômico / mês</span><strong id="duesConfigNetMonthly">R$ 0,00</strong><small>referência gerencial da Loja</small></article>
+                  <article class="stat-card"><span>Líquido econômico / ano</span><strong id="duesConfigNetAnnual">R$ 0,00</strong><small>12 × (mensalidade − Capitação − DAM)</small></article>
+                </div>
+                <div class="finance-context">Custo institucional mensal automático: <strong id="duesInstitutionalCost">R$ 0,00</strong> · custo mensal devido pela Loja à GLMERGS para todos os irmãos ativos, independentemente de isenção ou inadimplência. As provisões de <strong>Capitação</strong> e <strong>DAM</strong> são criadas automaticamente em Contas a Pagar quando cada competência mensal é gerada.</div>
+                <div class="form-grid"><label>Dia padrão de vencimento<input id="duesDueDay" type="number" min="1" max="28" step="1" value="10" required /></label><label>Situação<input value="Competências geradas mês a mês" disabled /></label></div>
+                <label>Descrição padrão<textarea id="duesConfigNotes" rows="3"></textarea></label>
+                <p class="form-help">Salvar esta configuração não cria mensalidades. Use “Gerar competência” para lançar cada mês. Isenções anuais são aplicadas automaticamente às novas competências.</p>
+                <div class="modal-actions"><button id="saveDuesConfigBtn" class="btn primary" type="submit">Salvar configuração anual</button></div>
+              </form>
+            </article>
+            <article class="card">
+              <div class="card-head"><div><p class="eyebrow">Conta bancária</p><h3>Saldo inicial e identificação</h3></div></div>
+              <form id="financeSettingsForm" class="modal-form dues-config-form">
+                <div class="form-grid"><label>Ano<input id="financeSettingsYear" type="number" min="2020" max="2100" value="2026" required /></label><label>Saldo inicial do exercício (R$)<input id="financeOpeningBalance" type="number" step="0.01" value="0" /></label></div>
+                <label>Identificação da conta / banco<input id="financeAccountLabel" placeholder="Ex.: Conta corrente da Loja Modelo" /></label>
+                <p class="form-help">O saldo inicial é usado no fluxo de caixa e na comparação com o extrato importado.</p>
+                <div class="modal-actions"><button id="saveFinanceSettingsBtn" class="btn primary" type="submit">Salvar parâmetros bancários</button></div>
+              </form>
+            </article>
+          </div>
+          <article class="card config-history-card">
+            <div class="card-head"><div><p class="eyebrow">Histórico</p><h3>Configurações anuais das mensalidades</h3></div><small>base financeira por exercício</small></div>
+            <div class="table-wrap"><table class="finance-table dues-config-table"><thead><tr><th>Ano</th><th>Mensalidade</th><th>Capitação/mês</th><th>DAM/mês</th><th>Líquido/mês</th><th>Vencimento</th><th>Geradas</th><th>Ação</th></tr></thead><tbody id="duesConfigRows"></tbody></table></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="view-library" class="view">
+        <div class="section-intro library-heading">
+          <div><p class="eyebrow">Acervo intelectual</p><h3>Biblioteca maçônica</h3><p>Trabalhos, documentos e memória intelectual liberados automaticamente conforme o grau do usuário.</p></div>
+          <button id="newDocumentBtn" class="btn primary hidden">+ Adicionar ao acervo</button>
+        </div>
+
+        <div class="stats-grid compact library-stats">
+          <article class="stat-card"><span>Acervo acessível</span><strong id="libraryAccessibleCount">0</strong><small>documentos para o seu grau</small></article>
+          <article class="stat-card"><span>Trabalhos</span><strong id="libraryWorkCount">0</strong><small>trabalhos maçônicos</small></article>
+          <article class="stat-card"><span>Temas</span><strong id="libraryThemeCount">0</strong><small>áreas do conhecimento</small></article>
+          <article class="stat-card"><span>Seu acesso</span><strong id="libraryAccessDegree">—</strong><small>inclui os graus anteriores</small></article>
+        </div>
+
+        <article class="card library-card">
+          <div class="toolbar library-toolbar">
+            <input id="librarySearch" placeholder="Pesquisar título, autor, tema ou palavra-chave..." />
+            <select id="libraryDegreeFilter"><option value="todos">Todos os graus acessíveis</option><option value="aprendiz">Aprendiz</option><option value="companheiro">Companheiro</option><option value="mestre">Mestre</option></select>
+            <select id="libraryThemeFilter"><option value="todos">Todos os temas</option></select>
+            <select id="libraryTypeFilter"><option value="todos">Todos os tipos</option><option value="trabalho">Trabalho</option><option value="artigo">Artigo</option><option value="livro">Livro / capítulo</option><option value="historico">Documento histórico</option><option value="ritualistica">Material ritualístico</option><option value="outro">Outro</option></select>
+          </div>
+          <div class="library-context"><span id="libraryResultCount"></span><span id="librarySecurityNote">O conteúdo exibido respeita a hierarquia de acesso por grau.</span></div>
+          <div id="libraryGrid" class="library-grid"></div>
+        </article>
+      </section>
+
+      <section id="view-members" class="view">
+        <div class="section-intro members-heading">
+          <div><p class="eyebrow">Quadro</p><h3>Irmãos</h3><p>Cadastro e diretório institucional da Loja Modelo. Dados familiares e endereço são tratados como informações privadas.</p></div>
+          <div class="section-actions" data-admin-only><button class="btn primary" type="button" data-action="open-new-member">+ Novo irmão</button></div>
+        </div>
+
+        <div class="stats-grid compact member-stats">
+          <article class="stat-card"><span>Irmãos ativos</span><strong id="memberTotal">0</strong><small>cadastros da Loja 70</small></article>
+          <article class="stat-card"><span>Mestres</span><strong id="memberMasters">0</strong><small>M∴M∴</small></article>
+          <article class="stat-card"><span>Companheiros</span><strong id="memberCompanions">0</strong><small>C∴M∴</small></article>
+          <article class="stat-card"><span>Aprendizes</span><strong id="memberApprentices">0</strong><small>A∴M∴</small></article>
+        </div>
+
+        <article class="card members-card">
+          <div class="toolbar members-toolbar">
+            <input id="memberSearch" placeholder="Buscar por nome, matrícula, telefone ou cargo..." />
+            <select id="memberDegreeFilter">
+              <option value="todos">Todos os graus</option>
+              <option value="mestre">Mestres</option>
+              <option value="companheiro">Companheiros</option>
+              <option value="aprendiz">Aprendizes</option>
+            </select>
+          </div>
+          <div class="member-context"><span id="memberResultCount"></span><span>Ficha completa disponível ao próprio irmão e aos perfis de acesso total.</span></div>
+          <div id="membersGrid" class="members-grid detailed"></div>
+        </article>
+      </section>
+
+      <section id="view-attendance" class="view">
+        <div class="section-intro attendance-heading">
+          <div><p class="eyebrow">Vida da Loja</p><h3>Chancelaria</h3><p>Controle de presença nas sessões, respeitando automaticamente o grau necessário para participação.</p></div>
+          <div id="attendanceManagerNav" class="attendance-page-nav hidden">
+            <button id="attendanceGoCall" class="btn primary" type="button">✓ Fazer chamada</button>
+            <button id="attendanceGoIndicators" class="btn ghost" type="button">Indicadores de frequência</button>
+          </div>
+        </div>
+
+        <div id="attendanceManagerArea" class="hidden">
+          <div id="attendanceCallPage" class="attendance-manager-page">
+            <article class="card attendance-sessions-card attendance-sessions-wide">
+              <div class="card-head"><div><p class="eyebrow">1 · Escolha a sessão</p><h3>Sessão para chamada</h3></div><small>Só sessões com grau definido podem receber chamada.</small></div>
+              <div class="toolbar attendance-toolbar attendance-toolbar-wide">
+                <select id="attendanceYearFilter"></select>
+                <input id="attendanceSessionSearch" placeholder="Buscar sessão..." />
+              </div>
+              <div id="attendanceSessionList" class="attendance-session-list attendance-session-grid"></div>
+            </article>
+
+            <article class="card attendance-call-card attendance-call-wide">
+              <div id="attendanceCallEmpty" class="attendance-empty-state"><strong>Selecione uma sessão acima</strong><span>A chamada abrirá em toda a largura da página para facilitar a marcação dos irmãos.</span></div>
+              <div id="attendanceCallArea" class="hidden">
+                <div class="attendance-call-head">
+                  <div><p class="eyebrow" id="attendanceCallEyebrow">Chamada</p><h3 id="attendanceCallTitle">Sessão</h3><p id="attendanceCallMeta"></p></div>
+                  <span id="attendanceCallStatus" class="status aberto">Em edição</span>
+                </div>
+                <div class="attendance-call-stats">
+                  <div><span>Habilitados</span><strong id="attendanceEligibleCount">0</strong></div>
+                  <div><span>Presentes</span><strong id="attendanceSelectedPresent">0</strong></div>
+                  <div><span>Ausentes</span><strong id="attendanceSelectedAbsent">0</strong></div>
+                  <div><span>Frequência</span><strong id="attendanceSelectedPercent">0%</strong></div>
+                </div>
+                <div class="attendance-info" id="attendanceDegreeRule"></div>
+                <div class="attendance-call-tools">
+                  <input id="attendanceMemberSearch" placeholder="Buscar irmão por nome ou matrícula..." />
+                  <div class="attendance-quick-actions"><button id="attendanceMarkAll" class="btn ghost" type="button">Marcar todos</button><button id="attendanceClearAll" class="btn ghost" type="button">Limpar</button></div>
+                </div>
+                <div id="attendanceMemberGrid" class="attendance-member-grid attendance-member-grid-wide"></div>
+                <div class="attendance-call-footer">
+                  <span id="attendanceUnsavedHint">Clique diretamente no nome do irmão para marcar ou desmarcar a presença.</span>
+                  <div><button id="attendanceSaveDraft" class="btn ghost" type="button">Salvar chamada</button><button id="attendanceFinalize" class="btn primary" type="button">Finalizar frequência</button></div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div id="attendanceIndicatorsPage" class="attendance-manager-page hidden">
+            <div class="stats-grid compact attendance-stats">
+              <article class="stat-card"><span>Sessões finalizadas</span><strong id="attendanceSessionCount">0</strong><small>computadas na frequência</small></article>
+              <article class="stat-card"><span>Presenças registradas</span><strong id="attendancePresentCount">0</strong><small>somatório no período</small></article>
+              <article class="stat-card"><span>Faltas computadas</span><strong id="attendanceAbsentCount">0</strong><small>somente irmãos habilitados</small></article>
+              <article class="stat-card"><span>Frequência média</span><strong id="attendanceAverage">0%</strong><small>entre presenças possíveis</small></article>
+            </div>
+
+            <article class="card attendance-summary-card attendance-summary-page">
+              <div class="card-head"><div><p class="eyebrow">Indicadores</p><h3>Frequência dos irmãos</h3></div><small>Uma falta só existe quando o irmão tinha grau suficiente para participar da sessão.</small></div>
+              <div class="toolbar attendance-summary-toolbar attendance-summary-filters"><select id="attendanceSummaryYearFilter"></select><input id="attendanceSummarySearch" placeholder="Buscar irmão..." /></div>
+              <div class="table-wrap"><table class="attendance-table"><thead><tr><th>Irmão</th><th>Grau atual</th><th>Sessões computadas</th><th>Presenças</th><th>Faltas</th><th>Frequência</th></tr></thead><tbody id="attendanceSummaryRows"></tbody></table></div>
+            </article>
+          </div>
+        </div>
+
+        <div id="attendanceOwnArea" class="hidden">
+          <div class="stats-grid compact attendance-own-stats">
+            <article class="stat-card"><span>Sessões computadas</span><strong id="ownAttendanceEligible">0</strong><small>nas quais seu grau permitia participação</small></article>
+            <article class="stat-card"><span>Presenças</span><strong id="ownAttendancePresent">0</strong><small>registradas</small></article>
+            <article class="stat-card"><span>Faltas</span><strong id="ownAttendanceAbsent">0</strong><small>sessões habilitadas sem presença</small></article>
+            <article class="stat-card"><span>Minha frequência</span><strong id="ownAttendancePercent">0%</strong><small>percentual de presença</small></article>
+          </div>
+          <article class="card attendance-own-card">
+            <div class="card-head"><div><p class="eyebrow">Minha frequência</p><h3>Histórico de sessões</h3></div><small>Sessões de grau superior ao seu não entram no cálculo e não geram falta.</small></div>
+            <div id="ownAttendanceHistory" class="attendance-own-history"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="view-management" class="view">
+        <div class="section-intro ops-heading">
+          <div><p class="eyebrow">Gestão da Loja</p><h3>Organização interna</h3><p>Centralize checklists operacionais e contatos de fornecedores em um único lugar.</p></div>
+        </div>
+
+        <div class="ops-tabs" role="tablist" aria-label="Módulos de gestão">
+          <button class="ops-tab active" type="button" data-management-tab="checklists">✓ Checklists</button>
+          <button class="ops-tab" type="button" data-management-tab="suppliers">▦ Fornecedores</button>
+        </div>
+
+        <div id="managementChecklistsPanel" class="ops-panel">
+          <div class="stats-grid compact ops-stats">
+            <article class="stat-card"><span>Modelos</span><strong id="checklistTemplateCount">0</strong><small>checklists cadastrados</small></article>
+            <article class="stat-card"><span>Em andamento</span><strong id="checklistOpenCount">0</strong><small>processos ativos</small></article>
+            <article class="stat-card"><span>Concluídos</span><strong id="checklistDoneCount">0</strong><small>histórico preservado</small></article>
+            <article class="stat-card"><span>Itens pendentes</span><strong id="checklistPendingItems">0</strong><small>tarefas ainda abertas</small></article>
+          </div>
+
+          <article class="card ops-card">
+            <div class="card-head ops-card-head">
+              <div><p class="eyebrow">Checklists</p><h3>Iniciação, Elevação, Exaltação e outros</h3><p>Crie modelos permanentes e abra um checklist para cada irmão quando necessário.</p></div>
+              <div class="ops-actions"><button id="manageChecklistTemplatesBtn" class="btn ghost" type="button">Modelos de checklist</button><button id="newChecklistRunBtn" class="btn primary" type="button">+ Novo checklist</button></div>
+            </div>
+            <div class="toolbar ops-toolbar">
+              <input id="checklistSearch" placeholder="Buscar por irmão, tipo ou responsável..." />
+              <select id="checklistStatusFilter"><option value="todos">Todos os status</option><option value="andamento">Em andamento</option><option value="concluido">Concluídos</option></select>
+            </div>
+            <div id="checklistRunGrid" class="checklist-run-grid"></div>
+          </article>
+        </div>
+
+        <div id="managementSuppliersPanel" class="ops-panel hidden">
+          <div class="stats-grid compact ops-stats">
+            <article class="stat-card"><span>Fornecedores</span><strong id="supplierTotalCount">0</strong><small>cadastros</small></article>
+            <article class="stat-card"><span>Ativos</span><strong id="supplierActiveCount">0</strong><small>disponíveis para contato</small></article>
+            <article class="stat-card"><span>Com WhatsApp</span><strong id="supplierWhatsappCount">0</strong><small>contato rápido</small></article>
+            <article class="stat-card"><span>Categorias</span><strong id="supplierCategoryCount">0</strong><small>tipos de serviço</small></article>
+          </div>
+
+          <article class="card ops-card">
+            <div class="card-head ops-card-head">
+              <div><p class="eyebrow">Fornecedores</p><h3>Cadastro de contatos</h3><p>Razão social, pessoa de contato, fone/WhatsApp e demais informações úteis da Loja.</p></div>
+              <div class="ops-actions"><button id="newSupplierBtn" class="btn primary" type="button">+ Novo fornecedor</button></div>
+            </div>
+            <div class="toolbar ops-toolbar">
+              <input id="supplierSearch" placeholder="Buscar empresa, contato, categoria ou telefone..." />
+              <select id="supplierStatusFilter"><option value="ativos">Ativos</option><option value="todos">Todos</option><option value="inativos">Inativos</option></select>
+            </div>
+            <div id="supplierGrid" class="supplier-grid"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="view-managements" class="view">
+        <div class="section-intro managements-heading">
+          <div><p class="eyebrow">Memória institucional</p><h3>Gestões da Loja Modelo</h3><p>Registro histórico das administrações da Loja, organizado por período e composição de cargos.</p></div>
+        </div>
+
+        <div class="stats-grid compact management-stats">
+          <article class="stat-card"><span>Gestões registradas</span><strong id="managementCount">0</strong><small>períodos históricos</small></article>
+          <article class="stat-card"><span>Período</span><strong>2006–2026</strong><small>registros disponíveis</small></article>
+          <article class="stat-card"><span>Irmãos citados</span><strong id="managementPeopleCount">0</strong><small>nomes distintos</small></article>
+          <article class="stat-card"><span>Fonte</span><strong>GLMERGS</strong><small>cadastro histórico da Loja</small></article>
+        </div>
+
+        <article class="card managements-card">
+          <div class="toolbar managements-toolbar">
+            <input id="managementSearch" placeholder="Buscar por irmão, cargo ou período..." />
+          </div>
+          <div class="management-context"><span id="managementResultCount"></span><span>Os registros foram transcritos da relação histórica fornecida pela Loja.</span></div>
+          <div id="managementGrid" class="management-grid"></div>
+        </article>
+
+        <article class="card historical-source-card">
+          <div><p class="eyebrow">Documento histórico</p><h3>Fonte original</h3><p>Consulte as páginas originais usadas na transcrição das gestões.</p></div>
+          <div class="historical-source-actions">
+          </div>
+        </article>
+      </section>
+
+      <section id="view-admin" class="view">
+        <div class="section-intro"><div><p class="eyebrow">Administração</p><h3>Permissões e configuração</h3><p>Área exclusiva para Venerável Mestre, Secretário e Administrador do portal.</p></div></div>
+        <div class="two-col">
+          <article class="card"><h3>Matriz de acesso por grau</h3><div class="permissions"><div><strong>Aprendiz</strong><span>Conteúdo classificado como Aprendiz.</span></div><div><strong>Companheiro</strong><span>Aprendiz + Companheiro.</span></div><div><strong>Mestre</strong><span>Aprendiz + Companheiro + Mestre.</span></div></div></article>
+          <article class="card"><h3>Permissões por função</h3><div class="permissions"><div><strong>Venerável Mestre / Secretário</strong><span>Acesso total ao portal e aos cadastros privados.</span></div><div><strong>Tesoureiro</strong><span>Lançar, quitar e administrar mensalidades.</span></div><div><strong>Chanceler</strong><span>Registrar e finalizar a frequência das sessões.</span></div><div><strong>Administrador do portal</strong><span>Gerenciar conteúdo, usuários, frequência e permissões.</span></div></div></article>
+        </div>
+        <article class="card access-management">
+          <div class="card-head"><div><p class="eyebrow">Acessos</p><h3>Graus, cargos e permissões</h3></div><small>Altere o grau quando houver elevação ou exaltação. Alterações de grau, cargo e permissões são validadas e gravadas no servidor.</small></div>
+          <div class="toolbar access-toolbar">
+            <input id="accessSearch" placeholder="Buscar por nome ou matrícula..." />
+            <select id="accessOfficeFilter">
+              <option value="todos">Todos os cargos</option>
+              <option value="Irmão">Irmão</option>
+              <option value="Venerável Mestre">Venerável Mestre</option>
+              <option value="Secretário">Secretário</option>
+              <option value="Tesoureiro">Tesoureiro</option>
+              <option value="Administrador do portal">Administrador do portal</option>
+            </select>
+          </div>
+          <div class="table-wrap"><table class="access-table"><thead><tr><th>Matrícula</th><th>Nome</th><th>Grau</th><th>Cargo maçônico</th><th>Permissão especial</th><th>Nível de acesso</th><th>Senha</th></tr></thead><tbody id="accessRows"></tbody></table></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="checklistTemplateDialog" class="wide-dialog">
+    <form id="checklistTemplateForm" class="modal-form">
+      <input id="checklistTemplateId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Gestão · Checklists</p><h3 id="checklistTemplateDialogTitle">Modelo de checklist</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <p class="modal-copy">Os modelos são permanentes. Cada linha abaixo vira um item marcável quando um novo checklist for aberto.</p>
+      <div class="form-grid two">
+        <label>Modelo<select id="checklistTemplatePicker"></select></label>
+        <label>Nome do modelo<input id="checklistTemplateName" required maxlength="120" placeholder="Ex.: Iniciação" /></label>
+      </div>
+      <label>Itens do checklist<textarea id="checklistTemplateItems" rows="12" placeholder="Um item por linha.
+Ex.: Confirmar data
+Separar documentação
+Confirmar responsáveis"></textarea></label>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button id="newChecklistTemplateBtn" class="btn ghost" type="button">+ Novo modelo</button><button class="btn primary" type="submit">Salvar modelo</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="checklistRunDialog" class="wide-dialog">
+    <form id="checklistRunForm" class="modal-form">
+      <div class="modal-head"><div><p class="eyebrow">Gestão · Checklists</p><h3>Novo checklist</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid two">
+        <label>Tipo / modelo<select id="checklistRunTemplate" required></select></label>
+        <label>Irmão<select id="checklistRunMember" required></select></label>
+        <label>Data prevista<input id="checklistRunDate" type="date" /></label>
+        <label>Responsável<input id="checklistRunResponsible" maxlength="120" placeholder="Nome ou cargo responsável" /></label>
+      </div>
+      <label>Observações<textarea id="checklistRunNotes" rows="4" placeholder="Informações gerais deste processo"></textarea></label>
+      <p id="checklistRunTemplateHelp" class="form-help"></p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Criar checklist</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="checklistDetailDialog" class="wide-dialog">
+    <div class="modal-form">
+      <div class="modal-head"><div><p class="eyebrow">Gestão · Checklist</p><h3 id="checklistDetailTitle">Checklist</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div id="checklistDetailMeta" class="checklist-detail-meta"></div>
+      <div class="checklist-detail-tools"><input id="checklistNewItemText" placeholder="Adicionar item específico a este checklist..." /><button id="checklistAddItemBtn" class="btn ghost" type="button">+ Adicionar item</button></div>
+      <div id="checklistDetailItems" class="checklist-detail-items"></div>
+      <label>Observações<textarea id="checklistDetailNotes" rows="4"></textarea></label>
+      <div class="modal-actions"><button id="deleteChecklistRunBtn" class="btn danger ghost" type="button">Excluir checklist</button><button class="btn ghost" type="button" data-close-dialog>Fechar</button><button id="saveChecklistDetailBtn" class="btn primary" type="button">Salvar alterações</button></div>
+    </div>
+  </dialog>
+
+  <dialog id="supplierDialog" class="wide-dialog">
+    <form id="supplierForm" class="modal-form">
+      <input id="supplierEditId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Gestão · Fornecedores</p><h3 id="supplierDialogTitle">Novo fornecedor</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid two">
+        <label>Razão social<input id="supplierLegalName" required maxlength="180" /></label>
+        <label>Nome fantasia<input id="supplierTradeName" maxlength="180" /></label>
+        <label>Pessoa de contato<input id="supplierContactPerson" maxlength="140" /></label>
+        <label>Fone / WhatsApp<input id="supplierPhone" maxlength="80" placeholder="(51) 99999-9999" /></label>
+        <label>E-mail<input id="supplierEmail" type="email" maxlength="180" /></label>
+        <label>Categoria / serviço<input id="supplierCategory" maxlength="120" placeholder="Ex.: Buffet, gráfica, manutenção" /></label>
+        <label>Status<select id="supplierStatus"><option value="ativo">Ativo</option><option value="inativo">Inativo</option></select></label>
+      </div>
+      <label>Observações<textarea id="supplierNotes" rows="4" placeholder="Condições, referências, horários, detalhes de atendimento..."></textarea></label>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Salvar fornecedor</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="chargeDialog">
+    <form id="chargeForm" class="modal-form">
+      <div class="modal-head"><div><p class="eyebrow">Financeiro</p><h3>Lançamento individual</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <label>Irmão<select id="chargeMember" required></select></label>
+      <div class="form-grid">
+        <label>Competência<input id="chargeMonth" type="month" value="2026-08" required /></label>
+        <label>Valor (R$)<input id="chargeValue" type="number" min="0.01" step="0.01" value="180" required /></label>
+      </div>
+      <label>Vencimento<input id="chargeDue" type="date" value="2026-08-10" required /></label>
+      <label>Observação<textarea id="chargeNotes" rows="3" placeholder="Opcional"></textarea></label>
+      <p id="chargeDuplicateHelp" class="form-help">O sistema não permite duas mensalidades da mesma competência para o mesmo irmão.</p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button id="saveChargeBtn" class="btn primary" type="submit">Salvar lançamento</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="bulkChargeDialog">
+    <form id="bulkChargeForm" class="modal-form">
+      <div class="modal-head"><div><p class="eyebrow">Financeiro</p><h3>Gerar competência mensal</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <p class="modal-copy">Cria somente a competência selecionada para todos os irmãos ativos. O valor vem da configuração anual e as isenções anuais são aplicadas automaticamente.</p>
+      <div class="form-grid">
+        <label>Competência<input id="bulkMonth" type="month" value="2026-09" required /></label>
+        <label>Valor-base do mês (R$)<input id="bulkValue" type="number" min="0.01" step="0.01" value="180" readonly required /></label>
+      </div>
+      <label>Vencimento<input id="bulkDue" type="date" value="2026-09-10" readonly required /></label>
+      <label>Observação padrão<textarea id="bulkNotes" rows="3" placeholder="Ex.: Mensalidade ordinária"></textarea></label>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit" value="default">Gerar mensalidades</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="paymentDialog">
+    <form id="paymentForm" class="modal-form">
+      <input id="paymentChargeId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Baixa financeira</p><h3>Registrar pagamento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div id="paymentSummary" class="payment-summary"></div>
+      <div class="form-grid">
+        <label>Data do pagamento<input id="paymentDate" type="date" value="2026-08-19" required /></label>
+        <label>Forma de pagamento<select id="paymentMethod" required><option value="PIX">PIX</option><option value="Dinheiro">Dinheiro</option><option value="Transferência">Transferência</option><option value="Boleto">Boleto</option><option value="Outro">Outro</option></select></label>
+      </div>
+      <label>Valor recebido (R$)<input id="paymentValue" type="number" min="0.01" step="0.01" required /></label>
+      <label>Observação<textarea id="paymentNotes" rows="3" placeholder="Opcional"></textarea></label>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit" value="default">Confirmar pagamento</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="detailDialog">
+    <div class="modal-form">
+      <div class="modal-head"><div><p class="eyebrow">Mensalidade</p><h3>Detalhes do lançamento</h3></div><button class="icon-btn" type="button" data-dialog-close-id="detailDialog">×</button></div>
+      <div id="chargeDetail"></div>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-dialog-close-id="detailDialog">Fechar</button></div>
+    </div>
+  </dialog>
+
+  <dialog id="documentDialog" class="wide-dialog">
+    <form id="documentForm" class="modal-form">
+      <input id="docEditId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Biblioteca</p><h3 id="documentDialogTitle">Adicionar ao acervo</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid two">
+        <label>Título<input id="docTitle" required /></label>
+        <label>Autor<input id="docAuthor" required /></label>
+        <label>Grau mínimo para acesso<select id="docDegree" required><option value="aprendiz">Aprendiz</option><option value="companheiro">Companheiro</option><option value="mestre">Mestre</option></select></label>
+        <label>Tipo<select id="docType" required><option value="trabalho">Trabalho</option><option value="artigo">Artigo</option><option value="livro">Livro / capítulo</option><option value="historico">Documento histórico</option><option value="ritualistica">Material ritualístico</option><option value="outro">Outro</option></select></label>
+        <label>Tema<input id="docTheme" placeholder="Ex.: Simbolismo, História, Filosofia" required /></label>
+        <label>Ano<input id="docYear" type="number" min="1700" max="2100" value="2026" required /></label>
+      </div>
+      <label>Palavras-chave<input id="docKeywords" placeholder="Ex.: terceiro grau, simbolismo, morte iniciática" /></label>
+      <label>Descrição<textarea id="docDescription" rows="4" placeholder="Breve resumo do conteúdo para facilitar a pesquisa no acervo."></textarea></label>
+      <label>Arquivo <input id="docFile" type="file" accept=".pdf,.doc,.docx,.txt,.rtf,.jpg,.jpeg,.png" /></label>
+      <div class="file-help" id="docFileHelp">PDF, DOC/DOCX, TXT/RTF ou imagem. Limite de 50 MB por arquivo.</div>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button id="saveDocumentBtn" class="btn primary" type="submit" value="default">Salvar no acervo</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="documentDetailDialog" class="wide-dialog">
+    <div class="modal-form">
+      <div class="modal-head"><div><p class="eyebrow">Biblioteca</p><h3 id="documentDetailTitle">Documento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div id="documentDetailBody"></div>
+      <div class="modal-actions" id="documentDetailActions"></div>
+    </div>
+  </dialog>
+
+  <dialog id="socialDialog" class="wide-dialog">
+    <form id="socialForm" class="modal-form">
+      <input id="socialEditId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Área social</p><h3 id="socialDialogTitle">Nova publicação</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid two">
+        <label>Tipo<select id="socialType" required><option value="informacao">Informação / notícia</option><option value="sessao">Sessão / agenda</option><option value="evento">Evento social</option><option value="galeria">Galeria de fotos</option></select></label>
+        <label>Data da publicação<input id="socialPublishedAt" type="date" required /></label>
+      </div>
+      <label>Título<input id="socialTitle" maxlength="140" required /></label>
+      <label>Texto / descrição<textarea id="socialBody" rows="6" placeholder="Escreva a informação, notícia, memória ou descrição do registro." required></textarea></label>
+
+      <div id="socialEventFields" class="event-fields hidden">
+        <div class="form-grid two">
+          <label>Data da sessão / evento<input id="socialEventDate" type="date" /></label>
+          <label>Horário<input id="socialEventTime" type="time" /></label>
+          <label>Local<input id="socialEventLocation" placeholder="Ex.: Templo da Loja Modelo" /></label>
+          <label>Endereço / referência<input id="socialEventAddress" placeholder="Opcional" /></label>
+        </div>
+        <div id="socialSessionDegreeWrap" class="hidden">
+          <label>Grau da sessão<select id="socialSessionDegree"><option value="aprendiz">Aprendiz · A∴M∴</option><option value="companheiro">Companheiro · C∴M∴</option><option value="mestre">Mestre · M∴M∴</option></select><span class="file-help">A frequência considera somente irmãos com grau suficiente para participar.</span></label>
+        </div>
+        <label>Informações adicionais<textarea id="socialEventNotes" rows="3" placeholder="Traje, pauta, orientações, observações ou outras informações úteis."></textarea></label>
+      </div>
+
+      <label>Fotos <input id="socialPhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple /></label>
+      <div id="socialPhotoHelp" class="file-help">Até 12 fotos por publicação, com no máximo 10 MB cada. As imagens serão gravadas na pasta imagens-social junto aos arquivos do site.</div>
+      <label class="check-row"><input id="socialFeatured" type="checkbox" /> Destacar esta publicação</label>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button id="saveSocialBtn" class="btn primary" type="submit">Publicar</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="socialDetailDialog" class="wide-dialog social-detail-dialog">
+    <div class="modal-form">
+      <div class="modal-head"><div><p class="eyebrow">Área social</p><h3 id="socialDetailTitle">Publicação</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div id="socialDetailBody"></div>
+      <div id="socialDetailActions" class="modal-actions"></div>
+    </div>
+  </dialog>
+
+
+  <dialog id="chargeAdjustDialog">
+    <form id="chargeAdjustForm" class="modal-form">
+      <input id="chargeAdjustId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Mensalidades</p><h3>Ajustar lançamento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div id="chargeAdjustSummary" class="payment-summary"></div>
+      <label>Valor da competência (R$)<input id="chargeAdjustValue" type="number" min="0" step="0.01" required /></label>
+      <label>Situação<select id="chargeAdjustStatus"><option value="aberto">Cobrança normal</option><option value="isento">Isento / dispensado</option></select></label>
+      <label>Motivo / observação<textarea id="chargeAdjustReason" rows="3" required placeholder="Informe o motivo do ajuste, desconto ou isenção."></textarea></label>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Salvar ajuste</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="memberFinanceDialog" class="wide-dialog">
+    <div class="modal-head"><div><p class="eyebrow">Ficha financeira</p><h3 id="memberFinanceTitle">Mensalidades do irmão</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+    <div class="toolbar member-finance-toolbar"><select id="memberFinanceYear"></select></div>
+    <div id="memberFinanceSummary" class="stats-grid compact"></div>
+    <div class="table-wrap"><table class="finance-table"><thead><tr><th>Mês</th><th>Valor</th><th>Vencimento</th><th>Pagamento</th><th>Status</th><th>Recibo</th></tr></thead><tbody id="memberFinanceRows"></tbody></table></div>
+    <div class="modal-actions"><button id="toggleAnnualExemptionBtn" class="btn ghost hidden" type="button">Isentar mensalidades do ano</button><button class="btn ghost" type="button" data-close-dialog>Fechar</button></div>
+  </dialog>
+
+  <dialog id="budgetDialog" class="wide-dialog">
+    <form id="budgetForm" class="modal-form">
+      <input id="budgetEditId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Orçamento anual</p><h3 id="budgetDialogTitle">Nova previsão orçamentária</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid"><label>Ano<input id="budgetEntryYear" type="number" min="2020" max="2100" required /></label><label>Valor orçado (R$)<input id="budgetAmount" type="number" min="0.01" step="0.01" required /></label></div>
+      <label>Conta do Plano de Contas<select id="budgetAccount" required></select></label>
+      <label>Centro de custo<select id="budgetCostCenter" required></select></label>
+      <label>Descrição / objetivo<input id="budgetDescription" placeholder="Ex.: manutenção preventiva do Templo" /></label>
+      <p class="form-help">Mensalidades, Capitação e DAM são linhas automáticas. Os valores de Capitação e DAM são mensais e as obrigações são geradas junto com cada competência.</p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Salvar previsão</button></div>
+    </form>
+  </dialog>
+
+
+  <dialog id="chartAccountDialog" class="wide-dialog">
+    <form id="chartAccountForm" class="modal-form">
+      <input id="chartAccountEditId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Plano de contas</p><h3 id="chartAccountDialogTitle">Nova conta</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid">
+        <label>Código contábil<input id="chartAccountCode" required placeholder="Ex.: 2.16" autocomplete="off" /></label>
+        <label>Natureza<select id="chartAccountType" required><option value="receita">Receita</option><option value="despesa">Despesa</option></select></label>
+      </div>
+      <label>Nome da conta<input id="chartAccountName" required placeholder="Ex.: Limpeza e conservação" /></label>
+      <label>Grupo<input id="chartAccountGroup" required placeholder="Ex.: Estrutura e sede" /></label>
+      <label>Descrição<textarea id="chartAccountDescription" rows="3" placeholder="Explique quando esta conta deve ser utilizada."></textarea></label>
+      <label class="checkbox-line"><input id="chartAccountActive" type="checkbox" checked /> Conta ativa para novos lançamentos</label>
+      <p class="form-help">Não excluímos contas que façam parte do histórico financeiro. Quando uma classificação deixar de ser utilizada, ela deve ser desativada.</p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Salvar conta</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="costCenterDialog" class="wide-dialog">
+    <form id="costCenterForm" class="modal-form">
+      <input id="costCenterEditId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Centros de custo</p><h3 id="costCenterDialogTitle">Novo centro de custo</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid">
+        <label>Código<input id="costCenterCode" required placeholder="Ex.: CC.10.01" autocomplete="off" /></label>
+        <label>Nome<input id="costCenterName" required placeholder="Ex.: 50 anos da Loja Modelo" /></label>
+      </div>
+      <label>Descrição<textarea id="costCenterDescription" rows="3" placeholder="Explique quais movimentações devem ser classificadas neste centro."></textarea></label>
+      <label class="checkbox-line"><input id="costCenterActive" type="checkbox" checked /> Centro ativo para novos lançamentos</label>
+      <p class="form-help">Centros já utilizados permanecem no histórico. Quando deixarem de ser usados, desative-os em vez de apagar.</p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Salvar centro</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="commitmentDialog" class="wide-dialog">
+    <form id="commitmentForm" class="modal-form">
+      <input id="commitmentEditId" type="hidden" /><input id="commitmentType" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Previsão financeira</p><h3 id="commitmentDialogTitle">Nova conta</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid"><label>Competência<input id="commitmentCompetence" type="month" required /></label><label>Vencimento<input id="commitmentDueDate" type="date" required /></label></div>
+      <div class="form-grid"><label>Conta contábil<select id="commitmentAccount" required></select></label><label>Centro de custo<select id="commitmentCostCenter" required></select></label></div>
+      <label>Descrição<input id="commitmentDescription" required placeholder="Ex.: Fatura de energia de agosto" /></label>
+      <div class="form-grid"><label id="commitmentCounterpartyLabel">Fornecedor / favorecido<input id="commitmentCounterparty" /></label><label>Valor previsto (R$)<input id="commitmentAmount" type="number" min="0.01" step="0.01" required /></label></div>
+      <label>Documento / referência<input id="commitmentReference" placeholder="NF, boleto, contrato, referência interna..." /></label>
+      <label>Observações<textarea id="commitmentNotes" rows="3"></textarea></label>
+      <p class="form-help">O lançamento previsto não movimenta o caixa. A movimentação efetiva será criada quando a conta for paga ou recebida.</p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Salvar previsão</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="commitmentSettleDialog" class="wide-dialog">
+    <form id="commitmentSettleForm" class="modal-form">
+      <input id="commitmentSettleId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Baixa financeira</p><h3 id="commitmentSettleTitle">Registrar baixa</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div id="commitmentSettleSummary" class="payment-summary"></div>
+      <div class="form-grid"><label>Data da baixa<input id="commitmentSettleDate" type="date" required /></label><label>Valor efetivo (R$)<input id="commitmentSettleAmount" type="number" min="0.01" step="0.01" required /></label></div>
+      <div class="form-grid"><label>Forma<select id="commitmentSettleMethod"><option>Pix</option><option>Transferência</option><option>Dinheiro</option><option>Boleto</option><option>Cartão</option><option>Débito automático</option><option>Outro</option></select></label><label>Referência<input id="commitmentSettleReference" placeholder="Comprovante, NF, recibo..." /></label></div>
+      <label>Observações<textarea id="commitmentSettleNotes" rows="3"></textarea></label>
+      <p class="form-help">A baixa gera automaticamente um lançamento realizado em Receitas ou Despesas e mantém o vínculo com esta previsão.</p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Confirmar baixa</button></div>
+    </form>
+  </dialog>
+
+
+  <dialog id="financialEventDialog" class="wide-dialog"><form id="financialEventForm" class="modal-form"><input id="financialEventEditId" type="hidden"/><div class="modal-head"><div><p class="eyebrow">Tesouraria · Eventos</p><h3 id="financialEventDialogTitle">Novo evento financeiro</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div><div class="form-grid"><label>Nome do evento<input id="financialEventName" required placeholder="Ex.: Aniversário da Loja Modelo"/></label><label>Data do evento<input id="financialEventDate" type="date" required/></label></div><div class="form-grid"><label>Valor unitário do ingresso (R$)<input id="financialEventTicketValue" type="number" min="0.01" step="0.01" required/></label><label>Situação<select id="financialEventStatus"><option value="ativo">Ativo</option><option value="encerrado">Encerrado</option></select></label></div><label>Descrição / observações<textarea id="financialEventDescription" rows="3"></textarea></label><div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Salvar evento</button></div></form></dialog>
+
+  <dialog id="financialEventDetailDialog" class="wide-dialog event-detail-dialog"><div class="modal-form"><div class="modal-head"><div><p class="eyebrow">Controle do evento</p><h3 id="financialEventDetailTitle">Evento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div><div id="financialEventDetailSummary" class="payment-summary"></div><div class="button-row"><button id="eventDetailPaymentBtn" class="btn primary" type="button">+ Registrar pagamento</button><button id="eventDetailExpenseBtn" class="btn ghost" type="button">+ Registrar despesa</button></div><h4>Resumo por irmão</h4><div class="table-wrap"><table class="finance-table"><thead><tr><th>Irmão</th><th>Total pago</th><th>Ingressos</th><th>Depósitos</th></tr></thead><tbody id="financialEventMemberRows"></tbody></table></div><h4>Histórico de pagamentos</h4><div class="table-wrap"><table class="finance-table"><thead><tr><th>Data</th><th>Irmão</th><th>Valor</th><th>Ingressos</th><th>Forma</th><th>Referência</th><th>Ações</th></tr></thead><tbody id="financialEventPaymentRows"></tbody></table></div><h4>Custos do evento</h4><div class="table-wrap"><table class="finance-table"><thead><tr><th>Data</th><th>Descrição</th><th>Fornecedor</th><th>Valor</th><th>Forma</th></tr></thead><tbody id="financialEventExpenseRows"></tbody></table></div></div></dialog>
+
+  <dialog id="eventPaymentDialog" class="wide-dialog"><form id="eventPaymentForm" class="modal-form"><input id="eventPaymentEventId" type="hidden"/><input id="eventPaymentBankId" type="hidden"/><div class="modal-head"><div><p class="eyebrow">Receita extraordinária</p><h3 id="eventPaymentTitle">Pagamento de evento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div><label>Irmão<select id="eventPaymentMember" required></select></label><div class="form-grid"><label>Data<input id="eventPaymentDate" type="date" required/></label><label>Valor pago (R$)<input id="eventPaymentAmount" type="number" min="0.01" step="0.01" required/></label></div><div class="form-grid"><label>Ingressos<input id="eventPaymentTickets" disabled/></label><label>Forma<select id="eventPaymentMethod"><option>Pix</option><option>Transferência</option><option>Dinheiro</option><option>Cartão</option><option>Extrato bancário</option><option>Outro</option></select></label></div><p id="eventPaymentWarning" class="form-help"></p><label>Referência<input id="eventPaymentReference"/></label><label>Observações<textarea id="eventPaymentNotes" rows="2"></textarea></label><div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button id="saveEventPaymentBtn" class="btn primary" type="submit">Registrar pagamento</button></div></form></dialog>
+
+  <dialog id="eventExpenseDialog" class="wide-dialog"><form id="eventExpenseForm" class="modal-form"><input id="eventExpenseEventId" type="hidden"/><div class="modal-head"><div><p class="eyebrow">Custo extraordinário</p><h3 id="eventExpenseTitle">Despesa do evento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div><div class="form-grid"><label>Data<input id="eventExpenseDate" type="date" required/></label><label>Valor (R$)<input id="eventExpenseAmount" type="number" min="0.01" step="0.01" required/></label></div><label>Descrição<input id="eventExpenseDescription" required/></label><label>Fornecedor / favorecido<input id="eventExpenseCounterparty"/></label><div class="form-grid"><label>Forma<select id="eventExpenseMethod"><option>Pix</option><option>Transferência</option><option>Dinheiro</option><option>Boleto</option><option>Cartão</option><option>Outro</option></select></label><label>Referência<input id="eventExpenseReference"/></label></div><label>Observações<textarea id="eventExpenseNotes" rows="2"></textarea></label><div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Registrar despesa</button></div></form></dialog>
+
+  <dialog id="ledgerDialog" class="wide-dialog">
+    <form id="ledgerForm" class="modal-form">
+      <input id="ledgerEditId" type="hidden" /><input id="ledgerType" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Tesouraria</p><h3 id="ledgerDialogTitle">Novo lançamento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="form-grid"><label>Data<input id="ledgerDate" type="date" required /></label><label>Conta contábil<select id="ledgerAccount" required><option value="">Selecione uma conta...</option></select></label></div>
+      <label>Centro de custo<select id="ledgerCostCenter" required><option value="">Selecione um centro de custo...</option></select><span class="file-help">Indique onde ou para qual finalidade o recurso foi utilizado.</span></label>
+      <label>Descrição<input id="ledgerDescription" required /></label>
+      <div class="form-grid"><label id="ledgerCounterpartyLabel">Origem / fornecedor<input id="ledgerCounterparty" /></label><label>Valor (R$)<input id="ledgerAmount" type="number" min="0.01" step="0.01" required /></label></div>
+      <div class="form-grid"><label>Forma de pagamento/recebimento<select id="ledgerMethod"><option>Pix</option><option>Transferência</option><option>Dinheiro</option><option>Boleto</option><option>Cartão</option><option>Débito automático</option><option>Outro</option></select></label><label>Documento / referência<input id="ledgerReference" placeholder="NF, recibo, comprovante..." /></label></div>
+      <label>Comprovante (opcional)<input id="ledgerAttachment" type="file" accept="application/pdf,image/jpeg,image/png,image/webp" /><span class="file-help" id="ledgerAttachmentHelp">PDF, JPG, PNG ou WEBP · até 20 MB.</span></label>
+      <label>Observações<textarea id="ledgerNotes" rows="3"></textarea></label>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button id="saveLedgerBtn" class="btn primary" type="submit">Salvar lançamento</button></div>
+    </form>
+  </dialog>
+
+
+  <dialog id="eventBankDialog" class="wide-dialog"><form id="eventBankForm" class="modal-form"><input id="eventBankId" type="hidden"/><div class="modal-head"><div><p class="eyebrow">Extrato → Evento</p><h3>Registrar pagamento de evento</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div><div id="eventBankSummary" class="payment-summary"></div><label>Evento<select id="eventBankEvent" required></select></label><label>Irmão<select id="eventBankMember" required></select></label><p class="form-help">A quantidade de ingressos será calculada automaticamente pelo valor do crédito dividido pelo valor unitário do evento. O sistema só oferece eventos cujo valor seja um múltiplo exato.</p><div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Registrar e conciliar</button></div></form></dialog>
+
+  <dialog id="reconcileDialog" class="wide-dialog">
+    <form id="reconcileForm" class="modal-form">
+      <input id="reconcileBankId" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Conciliação bancária</p><h3>Vincular movimentação</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div id="reconcileBankSummary" class="payment-summary"></div>
+      <label>Vincular a<select id="reconcileTarget" required></select></label>
+      <p class="form-help">Ao conciliar um crédito com uma mensalidade em aberto, a baixa é registrada automaticamente pela data do extrato.</p>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Cancelar</button><button class="btn primary" type="submit">Confirmar conciliação</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="memberProfileDialog" class="wide-dialog member-profile-dialog">
+    <form id="memberProfileForm" class="modal-form member-profile-form">
+      <input id="memberProfileMatricula" type="hidden" />
+      <div class="modal-head"><div><p class="eyebrow">Cadastro de irmão</p><h3 id="memberProfileTitle">Ficha individual</h3></div><button class="icon-btn" type="button" data-close-dialog>×</button></div>
+      <div class="profile-privacy-note"><strong>Ficha privada.</strong> Endereço, familiares, contatos adicionais e observações não aparecem no diretório público dos irmãos.</div>
+
+      <fieldset class="profile-section">
+        <legend>Dados pessoais</legend>
+        <div class="form-grid two">
+          <label>Nome completo<input id="profileName" required /></label>
+          <label>Nome pelo qual é conhecido<input id="profilePreferredName" placeholder="Opcional" /></label>
+          <label>Matrícula<input id="profileMatriculaDisplay" inputmode="numeric" disabled /></label>
+          <label>Data de nascimento<input id="profileBirthDate" type="date" /></label>
+          <label>Celular principal<input id="profilePhone" type="tel" /></label>
+          <label>Telefone alternativo<input id="profileAltPhone" type="tel" /></label>
+          <label>E-mail<input id="profileEmail" type="email" /></label>
+          <label>Profissão / ocupação<input id="profileProfession" /></label>
+          <label>Estado civil<select id="profileMaritalStatus"><option value="">Não informado</option><option>Solteiro</option><option>Casado</option><option>União estável</option><option>Divorciado</option><option>Viúvo</option><option>Outro</option></select></label>
+          <label>Situação<select id="profileActive"><option value="true">Ativo</option><option value="false">Inativo</option></select></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="profile-section">
+        <legend>Endereço</legend>
+        <div class="form-grid two">
+          <label>CEP<input id="profileCep" inputmode="numeric" /></label>
+          <label>Logradouro<input id="profileStreet" /></label>
+          <label>Número<input id="profileNumber" /></label>
+          <label>Complemento<input id="profileComplement" /></label>
+          <label>Bairro<input id="profileNeighborhood" /></label>
+          <label>Cidade<input id="profileCity" /></label>
+          <label>Estado<input id="profileState" maxlength="2" placeholder="RS" /></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="profile-section">
+        <legend>Dados maçônicos</legend>
+        <div class="form-grid two">
+          <label>Loja<input id="profileLodge" type="number" min="1" value="70" /></label>
+          <label>Grau<select id="profileDegree"><option value="aprendiz">Aprendiz · A∴M∴</option><option value="companheiro">Companheiro · C∴M∴</option><option value="mestre">Mestre · M∴M∴</option></select></label>
+          <label class="check-row"><input id="profileInstalledMaster" type="checkbox" /> Mestre Instalado (M∴I∴)</label>
+          <label>Data de iniciação<input id="profileInitiationDate" type="date" /></label>
+          <label>Data de elevação<input id="profilePassingDate" type="date" /></label>
+          <label>Data de exaltação<input id="profileRaisingDate" type="date" /></label>
+          <label>Função atual<input id="profileOfficeDisplay" disabled /></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="profile-section">
+        <legend>Contato de emergência</legend>
+        <div class="form-grid two">
+          <label>Nome<input id="profileEmergencyName" /></label>
+          <label>Parentesco / vínculo<input id="profileEmergencyRelation" /></label>
+          <label>Telefone<input id="profileEmergencyPhone" type="tel" /></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="profile-section">
+        <div class="profile-section-head"><legend>Familiares e parentes</legend><button id="addRelativeBtn" class="btn ghost small-btn" type="button">+ Acrescentar parente</button></div>
+        <p class="file-help">Adicione quantos familiares forem necessários. Ex.: esposa, esposo, companheira(o), filho(a), pai, mãe, irmão(ã).</p>
+        <div id="relativesList" class="relatives-list"></div>
+      </fieldset>
+
+      <fieldset class="profile-section">
+        <legend>Observações</legend>
+        <label>Informações complementares<textarea id="profileNotes" rows="4" placeholder="Observações administrativas relevantes para o cadastro da Loja."></textarea></label>
+      </fieldset>
+
+      <div class="profile-updated" id="profileUpdatedInfo"></div>
+      <div class="modal-actions"><button class="btn ghost" type="button" data-close-dialog>Fechar</button><button id="saveMemberProfileBtn" class="btn primary" type="submit">Salvar ficha</button></div>
+    </form>
+  </dialog>
+
+  <script src="vendor/xlsx.full.min.js"></script>
+  <dialog id="passwordChangeDialog" class="password-dialog">
+    <form id="passwordChangeForm" method="dialog">
+      <div class="modal-head"><div><p class="eyebrow">Segurança</p><h3>Definir senha pessoal</h3></div></div>
+      <p id="passwordChangeIntro">Por segurança, crie uma senha pessoal antes de acessar os dados do portal.</p>
+      <label>Nova senha
+        <input id="newPassword" type="password" autocomplete="new-password" minlength="6" required />
+      </label>
+      <label>Confirmar nova senha
+        <input id="confirmNewPassword" type="password" autocomplete="new-password" minlength="6" required />
+      </label>
+      <p class="form-help">Mínimo de 6 caracteres, contendo pelo menos uma letra e um número.</p>
+      <div class="modal-actions"><button id="cancelPasswordChangeBtn" class="btn ghost" type="button">Cancelar</button><button class="btn primary" type="submit">Salvar nova senha</button></div>
+    </form>
+  </dialog>
+
+  <script src="app.js?v=32.2.10"></script>
+</body>
+</html>

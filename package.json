@@ -1,0 +1,16 @@
+{
+  "name": "portal-maconico-livre",
+  "version": "0.2.0",
+  "private": false,
+  "type": "module",
+  "description": "Portal open source para gestão de lojas maçônicas.",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "test": "node --test tests/integration.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
